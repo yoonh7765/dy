@@ -1,0 +1,277 @@
+/*id 태그작업*/
+html{
+  scroll-behavior: smooth;  
+  }
+  
+  /* 폰트 적용*/
+  @font-face {
+    font-family: "GmarketSansMedium";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  html > body {
+    font-family: "GmarketSansMedium";
+    text-underline-position: under;
+  }
+  
+  /* 스크롤바 꾸미기 시작 */
+  :root {
+    overflow-y:overlay;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(45,45,45,0.3);
+    border-radius: 0;
+  }
+  
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  /* 스크롤바 꾸미기 끝 */
+  
+  /*top버튼*/
+  
+  .top-btn{
+    width:100px;
+    height:100px;
+    background-color:#3330E4;
+    opacity: 80%;
+    color:white;
+    font-size:24px;
+    border-radius:50%;
+    z-index:2;
+    right:100px;
+    top:60%;
+    position:absolute;
+  }
+  .top-btn a {
+    
+    width:100px;
+    height:100px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /*라이브러리*/
+  :root {
+    --site-width:1920px;
+    --site-width:1400px; /* 테스트 */
+  }
+  
+  .con-min-width{
+    min-width:var(--site-width);
+  }
+  
+  .con{
+    width:var(--site-width);
+  }
+  .con-2{
+    width:1920px;
+  }
+  .flex-grid {
+    display: flex;
+    flex-wrap: wrap;
+    --y-gap: 10px;
+    --x-gap: 10px;
+    --cc: 3;
+    gap: var(--y-gap) var(--x-gap);
+  }
+  
+  .flex-grid > * {
+    width: calc(100% / var(--cc) - (var(--x-gap) * (var(--cc) - 1)) / var(--cc));
+  }
+  
+  .top-bar-1 {
+    height:95px;
+  }
+  
+  .logo_test-img{
+    width:200px;
+    height:95px;
+    font-size:24px;
+  }
+  .menu-top-bar > ul > li > a{
+    position:relative;
+    margin: 0 10px;
+  }
+  .menu-top-bar > ul > li > a::after {
+    content: "";
+    background-color:#333;
+    bottom: 20px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    opacity:0;
+    transition:0.5s;
+  }
+  .menu-top-bar > ul > li:hover > a::after{
+    opacity:1;
+  }
+  /*소개*/
+  .section-1-main{
+    height:150px;
+    margin-top:100px;
+  }
+  .section-1-sub{
+    height:300px;
+  }
+  .section-1{
+    margin-top:250px;
+    height:300px;
+  }
+  .main-feed span{
+    font-size:40px;
+  }
+  
+  /*데일리요트 소개문*/
+  .main-feed_sub-1{
+    margin-top:50px;
+  }
+  .main-feed_sub-2{
+    margin-top:30px;
+  }
+  .main-feed_sub-1 span{
+    font-size:22px;
+  }
+  .main-feed_sub-2 span{
+    font-size:22px;
+  }
+  /*section-2*/
+  .section-2{
+    margin-top:50px;
+    height:250px;
+  }
+  /*상품리스트*/
+  .prod-list {
+    --x-gap:1.25rem;
+    --y-gap:var(--x-gap);
+    text-align:center;
+  }
+  
+  .prod-list .img-box {
+    position:relative;
+    overflow:hidden;
+  }
+  
+  .prod-list .img-box::before {
+    content:"";
+    border-radius:5px;
+    padding:5px;
+    z-index:1;
+    transition:opacity .3s;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translatex(-50%) translatey(-50%);
+    opacity:0;
+  }
+  .prod-list > li:hover > .img-box::before{
+    opacity:1;
+  }
+  .prod-list .img-box::after{
+    content:"";
+    background-color:rgba(0,0,0,0);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position:absolute;
+    transition:background-color .3s;
+  }
+  
+  .prod-list > li:hover > .img-box::after{
+    background-color:rgba(0,0,0,0.2);
+  }
+  
+  .prod-list .img-box > img{
+    transition: transform .3s;
+  }
+  
+  .prod-list > li:hover > .img-box > img{
+    transform:scale(1.5);
+  }
+  
+  .prod-list__item-name {
+    font-weight:bold;
+  }
+  
+  .prod-list__item-name, .prod-list__item-price {
+    margin-top:10px;
+  }
+  
+  .prod-list__item-price::before {
+    content:"\\ ";
+  }
+  
+  .section-3{
+    height:100px;
+    margin-top:150px;
+  }
+  /* 스와이퍼*/
+  .swiper-box-1 .swiper-slide > div > img {
+    display:block;
+  }
+  
+  .swiper-box-1 .swiper {
+    padding-top:100px;
+    padding-bottom:150px;
+  }
+  
+  .swiper-box-1 .swiper-slide > div {
+    transition:all 0.3s;
+  }
+  
+  .swiper-box-1 .swiper-slide.swiper-slide-active > div {
+    margin:-80px;
+    z-index:1;
+    position:relative;
+  }
+  /*영업시간*/
+  .section-5{
+    margin-top:100px;
+    height:100px;
+  }
+  .section-5-sub span{
+    font-size:32px;
+  }
+  .section-5-sub span p{
+    color:red;
+  }
+  .section-5-sub-2{
+    margin-top:40px;
+  }
+  .section-5-sub-2 span{
+    font-size:32px;
+  }
+  /*오시는 길*/
+  .section-6{
+    margin-top:100px;
+  }
+  .section-6 .main-feed:nth-child(2){
+    margin-top:30px;
+  }
+  .section-6 .main-feed:last-child span{
+    font-size:30px;
+  }
+  /*footer*/
+  .footer-bar{
+    height:200px;
+    margin-top:100px;
+    
+  }
+  .line{
+    width:100%;
+    height:2px;
+    background-color:#787878;
+    
+  }
+  .text{
+    margin-top:50px;
+    font-size:32px;
+  }
